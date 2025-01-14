@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Statue
   - SisterCamera
+  - PickUp
+  - Flashlight
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -13,8 +16,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Item
+  - Player
   - 
   - 
   - 
