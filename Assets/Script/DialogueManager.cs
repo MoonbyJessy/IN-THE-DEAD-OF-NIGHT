@@ -9,6 +9,21 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
+    public void StartDialogue (Dialogue dialogue)
+    {
+        Debug.Log("Starting conversation with " + dialogue.name);
+        sentences.Clear();
 
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+        DisplayNextSentence();
+
+    }
+    public void DisplayNextSentence ()
+    {
+
+    }
     
 }
