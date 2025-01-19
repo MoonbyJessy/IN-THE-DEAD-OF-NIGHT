@@ -12,10 +12,10 @@ public class TriggerCamera1 : MonoBehaviour
     private InputAction action;
 
     [SerializeField]
-    private CinemachineVirtualCamera vcam1; //Game camera
+    private CinemachineVirtualCameraBase vcam1; //Game camera
 
     [SerializeField]
-    private CinemachineVirtualCamera vcam2; // Sister camera
+    private CinemachineVirtualCameraBase vcam2; // Sister camera
 
     private bool GameCamera = true;
 
