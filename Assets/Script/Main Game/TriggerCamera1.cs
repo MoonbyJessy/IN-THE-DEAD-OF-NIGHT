@@ -6,9 +6,10 @@ using Cinemachine;
 
 public class TriggerCamera1 : MonoBehaviour
 {
+    public GameObject SisterCamera;
+
     [SerializeField]
-    private InputAction switchAction;
-    private InputAction exitAction;
+    private InputAction action;
 
     [SerializeField]
     private CinemachineVirtualCameraBase vcam1; //Game camera
@@ -17,29 +18,22 @@ public class TriggerCamera1 : MonoBehaviour
     private CinemachineVirtualCameraBase vcam2; // Sister camera
 
     private bool GameCamera = true;
-    private void OnEnable()
-    {
-        switchAction.Enable();
-        exitAction.Enable();
-    }
 
-    private void OnDisable()
-    {
-        switchAction.Disable();
-        exitAction.Disable();
-    }
     private void Start()
     {
-        if (switchAction == null)
-        { 
-            switchAction = new InputAction(binding: "<Keyboard>/e");
-        }
-        if (exitAction == null)
-        { 
-             exitAction = new InputAction(binding: "<Mouse>/leftButton");      
-        }
+        action.performed += _ => SwitchPriority();
     }
-  
+
+    private void OnEnable()
+    {
+        action.Enable();
+    }
+    private void OnDisable()
+    {
+        action.Disable();
+    }
+
+    
     private void SwitchPriority()
     { 
         if (GameCamera)
@@ -54,33 +48,5 @@ public class TriggerCamera1 : MonoBehaviour
         }
         GameCamera = !GameCamera;
 
-    }
-    private void SwitchToSisterCamera()
-    {
-        if (GameCamera)
-        {
-            vcam1.Priority = 0;
-            vcam2.Priority = 1;
-            GameCamera = false;
-            Debug.Log("Switched to Sister Camera");
-        }
-    }
-
-    private void TryExitCamera()
-    {
-        if (!GameCamera)
-        {
-            vcam1.Priority = 1;
-            vcam2.Priority = 0;
-            GameCamera = true;
-            Debug.Log("Returned to Game Camera");
-        }
-    }
-    public void TriggerSwitch()
-    {
-        if (GameCamera)
-            SwitchToSisterCamera();
-        else
-            TryExitCamera();
     }
 }

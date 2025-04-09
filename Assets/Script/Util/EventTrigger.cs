@@ -7,7 +7,7 @@ public class EventTrigger : MonoBehaviour
 {
     public UnityEvent onTriggerEnter;
     public UnityEvent onTriggerExit;
-    public CameraTriggerSwitcher switcher;
+
     private void OnTriggerEnter(Collider other)
     {
         if (onTriggerEnter != null)
@@ -16,10 +16,6 @@ public class EventTrigger : MonoBehaviour
             {
                 onTriggerEnter?.Invoke();
             }
-        }
-        if (other.CompareTag("Player"))
-        {
-            switcher.SwitchToSisterCamera();
         }
     }
 
@@ -32,9 +28,5 @@ public class EventTrigger : MonoBehaviour
                 onTriggerExit?.Invoke();
             }
         }
-    }
-    private void Update()
-    {
-        
     }
 }
