@@ -10,15 +10,5 @@ public class NarrationCharacter : ScriptableObject
     private string m_CharacterName;
 
     public string CharacterName => m_CharacterName;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

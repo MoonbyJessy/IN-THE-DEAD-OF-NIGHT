@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueNode : ScriptableObject
+public abstract class DialogueNode : ScriptableObject
 {
     [SerializeField]
     private NarrationLine m_DialogueLine;
