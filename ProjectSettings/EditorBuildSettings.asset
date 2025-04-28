@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 48d1839a5cd0b63429a16927cbed76f0
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Chapter 1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Ink/Demos/Basic Demo/Basic Demo.unity
+    path: Assets/Ink/Demos/Basic Demo/Chapter 2.unity
     guid: 8af1c5cbac5094782904447c9410b35d
   - enabled: 1
-    path: Assets/Scenes/EnemyQTE.unity
+    path: Assets/Scenes/Chapter 3.unity
     guid: 20b940c2af5d7e84199af630083d33ba
   - enabled: 1
-    path: Assets/Scenes/Tomb.unity
+    path: Assets/Scenes/Chapter 5 or 6.unity
     guid: b10abc8e7802e5f4b91ef5da52e56c21
   m_configObjects: {}
