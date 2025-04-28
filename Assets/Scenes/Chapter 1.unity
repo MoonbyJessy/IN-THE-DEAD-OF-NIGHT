@@ -2587,6 +2587,7 @@ MonoBehaviour:
   gameCamera: {fileID: 261283837}
   inspectionCamera: {fileID: 0}
   activeCamera: {fileID: 261283837}
+  cursorManager: {fileID: 470762579}
 --- !u!114 &470762578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2609,6 +2610,8 @@ MonoBehaviour:
   - {fileID: 152922619}
   - {fileID: 703090760}
   - {fileID: 2033315086}
+  delayBeforeSceneLoad: 5
+  sceneToLoad: Chapter 2
 --- !u!114 &470762579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8458,7 +8461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632204013}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19009426, y: -0.000000003880739, z: 7.5140694e-10, w: 0.98176587}
+  m_LocalRotation: {x: 0.19009423, y: 0.000000025634405, z: -0.000000004963457, w: 0.98176587}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
