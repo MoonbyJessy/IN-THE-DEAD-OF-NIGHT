@@ -10,10 +10,10 @@ public class QTESystem : MonoBehaviour
     public int QTEGen;
     public bool waiting = true;
     public int correctKey;
+    public GameObject gotBagBox;
 
 
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (waiting == true)
@@ -22,15 +22,79 @@ public class QTESystem : MonoBehaviour
             QTEGen = Random.Range(1, 3);
             if (QTEGen == 1 ) 
             {
-                displayBox.GetComponent<Text>().text = "[R]";
+                displayBox.GetComponent<Text>().text = "[1]";
             
             }
             if (QTEGen == 2)
             {
-                displayBox.GetComponent<Text>().text = "[T]";
+                displayBox.GetComponent<Text>().text = "[3]";
 
+            }
+            
+        }
+        if (QTEGen == 1)
+        {
+            if (Input.anyKeyDown)
+            {
+                if (Input.GetButtonDown("1Key"))
+                {
+                    correctKey = 1;
+                    StartCoroutine(KeyPressing());
+                }
+                else
+                {
+                    correctKey = 2;
+                    StartCoroutine(KeyPressing());
+                }
+            }
+        }
+        if (QTEGen == 2)
+        {
+            if (Input.anyKeyDown)
+            {
+                if (Input.GetButtonDown("3Key"))
+                {
+                    correctKey = 1;
+                    StartCoroutine(KeyPressing());
+                }
+                else
+                {
+                    correctKey = 2;
+                    StartCoroutine(KeyPressing());
+                }
             }
         }
 
+    }
+
+    IEnumerator KeyPressing()
+    {
+        QTEGen = 4;
+        if (correctKey == 1)
+        {
+            gotBagBox.GetComponent<Text>().text = "Correct";
+            yield return new WaitForSeconds(1.5f);
+            correctKey = 0;
+            gotBagBox.GetComponent<Text>().text = "";
+            displayBox.GetComponent<Text>().text = "";
+            yield return new WaitForSeconds(1.5f);
+
+            FirstQTE.timesDone += 1;
+            waiting = true;
+
+        }
+        if (correctKey == 2)
+        {
+            gotBagBox.GetComponent<Text>().text = "Incorrect";
+            yield return new WaitForSeconds(1.5f);
+            correctKey = 0;
+            gotBagBox.GetComponent<Text>().text = "";
+            displayBox.GetComponent<Text>().text = "";
+            yield return new WaitForSeconds(1.5f);
+
+            
+            waiting = true;
+
+        }
     }
 }

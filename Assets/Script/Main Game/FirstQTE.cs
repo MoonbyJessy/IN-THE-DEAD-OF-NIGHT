@@ -7,7 +7,7 @@ public class FirstQTE : MonoBehaviour
     public GameObject qteObject; //enemy
     public static int timesDone;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter()
     {
         qteObject.SetActive(true);
         GetComponent<BoxCollider>().enabled = false;

@@ -9,6 +9,7 @@ TagManager:
   - PickUp
   - Flashlight
   - Light
+  - Level Exit
   layers:
   - Default
   - TransparentFX

@@ -8,40 +8,63 @@ using UnityEngine.InputSystem;
 public class CameraSwitcher : MonoBehaviour
 {
     public CinemachineVirtualCameraBase gameCamera;
+    public CinemachineVirtualCameraBase inspectionCamera;
     public CinemachineVirtualCameraBase activeCamera;
     public Action onSwitchCamera;
+
     private InputAction switchBackAction;
+    private bool allowCameraSwitchBack = false;
 
-    private void OnEnable()
+    CursorManager cursorManager;
+
+    private void Awake()
     {
-        switchBackAction.Enable();
-        switchBackAction.performed += _ => SwitchToGameCamera();
+        switchBackAction = new InputAction(binding: "<Keyboard>/space");
+        switchBackAction.performed += _ => {
+            if (allowCameraSwitchBack) SwitchToGameCamera();
+        };
     }
 
-    private void OnDisable()
-    {
-        switchBackAction.Disable();
-    }
+    public void EnableCameraSwitchBack() => allowCameraSwitchBack = true;
+
+    private void OnEnable() => switchBackAction.Enable();
+    private void OnDisable() => switchBackAction.Disable();
+
     private void Start()
     {
-        if (switchBackAction == null)
+        if (gameCamera != null && activeCamera == null)
         {
-            switchBackAction = new InputAction(binding: "<Keyboard>/space");
-        } 
+            activeCamera = gameCamera;
+            gameCamera.Priority = 10;
+            inspectionCamera.Priority = 0;
+        }
     }
+
     public void SwitchToCamera(CinemachineVirtualCameraBase virtualCamera)
     {
-        activeCamera.Priority = 0;
-        virtualCamera.Priority = 1;
+        if (virtualCamera == null) return;
+
+        if (activeCamera != null)
+            activeCamera.Priority = 0;
+
+        virtualCamera.Priority = 10;
         activeCamera = virtualCamera;
         onSwitchCamera?.Invoke();
     }
+
     public void SwitchToGameCamera()
     {
-        Debug.Log("switch!");
+        Debug.Log("Switching to Game Camera!");
         SwitchToCamera(gameCamera);
+        cursorManager.HideCursor();
+
     }
 
-    public CinemachineVirtualCameraBase GetActiveCamera() { return activeCamera; }
+    public void SwitchToInspectionCamera()
+    {
+        Debug.Log("Switching to Inspection Camera!");
+        SwitchToCamera(inspectionCamera);
+    }
 
+    public CinemachineVirtualCameraBase GetActiveCamera() => activeCamera;
 }
