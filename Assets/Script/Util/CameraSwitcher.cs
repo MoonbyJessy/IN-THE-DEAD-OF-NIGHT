@@ -11,11 +11,12 @@ public class CameraSwitcher : MonoBehaviour
     public CinemachineVirtualCameraBase inspectionCamera;
     public CinemachineVirtualCameraBase activeCamera;
     public Action onSwitchCamera;
+    public CursorManager cursorManager;
+
 
     private InputAction switchBackAction;
     private bool allowCameraSwitchBack = false;
 
-    CursorManager cursorManager;
 
     private void Awake()
     {

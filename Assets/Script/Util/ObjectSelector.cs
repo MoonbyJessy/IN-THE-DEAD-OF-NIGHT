@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 
 public class ObjectSelector : MonoBehaviour
@@ -24,6 +25,11 @@ public class ObjectSelector : MonoBehaviour
     private Dictionary<Item, bool> itemHoverStates = new Dictionary<Item, bool>();
     private bool allItemsViewed = false;
 
+    public float delayBeforeSceneLoad = 5f; 
+    public string sceneToLoad = "NextSceneName";
+
+    private bool isWaitingToLoadScene = false;
+
     private void Start()
     {
         cameraSwitcher.onSwitchCamera += SaveInitialPosition;
@@ -40,6 +46,11 @@ public class ObjectSelector : MonoBehaviour
         if (allItemsViewed && Input.GetKeyDown(KeyCode.Space))
         {
             ReturnToPlayerCamera();
+
+            if (!isWaitingToLoadScene)
+            {
+                StartCoroutine(LoadSceneAfterDelay());
+            }
         }
     }
 
@@ -106,6 +117,16 @@ public class ObjectSelector : MonoBehaviour
                 Time.deltaTime * zoomSpeed
             );
         }
+    }
+
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        isWaitingToLoadScene = true;
+        Debug.Log($"Waiting {delayBeforeSceneLoad} seconds before loading scene {sceneToLoad}...");
+        yield return new WaitForSeconds(delayBeforeSceneLoad);
+
+        Debug.Log("Loading scene now!");
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private void CheckAllItemsViewed()
