@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecde9cc13a201749b517a7ee2bc2a6d, type: 3}
   m_Name: FindSisterQuest
   m_EditorClassIdentifier: 
-  questName: The Letter
-  description: Find Sister
+  questName: '  '
+  description: I should find my sister
   objectives:
   - objectiveID: FindSisterQuest
-    description: Find Sister
-    isComplete: 0
+    description: I Should find my sister
+    isComplete: 1
