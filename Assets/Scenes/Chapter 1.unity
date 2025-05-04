@@ -2558,7 +2558,7 @@ MonoBehaviour:
   - {fileID: 152922619}
   - {fileID: 703090760}
   - {fileID: 2033315086}
-  delayBeforeSceneLoad: 5
+  delayBeforeSceneLoad: 1.5
   sceneToLoad: Chapter 2
 --- !u!114 &470762579
 MonoBehaviour:

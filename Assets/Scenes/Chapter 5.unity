@@ -709,10 +709,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 4900000, guid: 2f352018eb143ae438ef9b730b284a65, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: cd1facdb6c30d2a4b8179f5a6ac6af3f, type: 3}
   canvas: {fileID: 1908123726}
-  textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
-  buttonPrefab: {fileID: 11455116, guid: 37c108a6c38964f79a6621eccb33ddc1, type: 3}
+  textPrefab: {fileID: 11456674, guid: 51174bed8006b854c8acee6539db7731, type: 3}
+  buttonPrefab: {fileID: 11455116, guid: 2f6aeb47c75142c4d8b5ead0aa323ef9, type: 3}
 --- !u!4 &2009679605
 Transform:
   m_ObjectHideFlags: 0
