@@ -311,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &227520126
 Transform:
   m_ObjectHideFlags: 0
@@ -593,8 +593,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.96330786, y: 2.5629086, z: 1}
-  m_Center: {x: -0.018345729, y: 0.7814549, z: 5.2679205e-11}
+  m_Size: {x: 1.0015895, y: 1.0533478, z: 1}
+  m_Center: {x: 0.00079543656, y: 0.02667541, z: -2.0502241e-12}
 --- !u!23 &273657700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -773,8 +773,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.330836, z: 1}
-  m_Center: {x: 0, y: 0.16541798, z: 0}
+  m_Size: {x: 1, y: 0.95662695, z: 1}
+  m_Center: {x: 0, y: 0.022986867, z: 0}
 --- !u!23 &356013220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1226,7 +1226,7 @@ GameObject:
   - component: {fileID: 1076693309}
   - component: {fileID: 1076693312}
   m_Layer: 0
-  m_Name: '[e]'
+  m_Name: '[e] Text'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1701,8 +1701,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019534586, y: 0.00078500103, z: 0.013576874}
-  m_Center: {x: -0.00006796982, y: -0.003838576, z: -0.0001418441}
+  m_Size: {x: 0.019534586, y: 0.0002578131, z: 0.013576874}
+  m_Center: {x: -0.00006796982, y: -0.00410217, z: -0.0001418441}
 --- !u!1 &1235278041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2135,7 @@ Transform:
   m_GameObject: {fileID: 1499860008}
   serializedVersion: 2
   m_LocalRotation: {x: -0.1346978, y: -0, z: -0, w: 0.99088675}
-  m_LocalPosition: {x: 2.3045654, y: -33.1, z: 6.5}
+  m_LocalPosition: {x: -1.68, y: -33.45, z: 5.23}
   m_LocalScale: {x: 15.776248, y: 1.9064692, z: 25.087536}
   m_ConstrainProportionsScale: 0
   m_Children: []
