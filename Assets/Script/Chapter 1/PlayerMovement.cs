@@ -19,14 +19,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
     public KeyCode sprintKey = KeyCode.LeftShift;
 
-
-
-
+    private Animator animator;
 
 
     private void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -54,5 +52,23 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         }
         controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime + Physics.gravity * Time.deltaTime);
+
+
+        //Animations
+        if(moveDirection == Vector3.zero)
+        {
+            //Idle
+            animator.SetFloat("Speed", 0);
+        }
+        else if(!Input.GetKey(KeyCode.LeftShift))
+        {
+            //Walk
+            animator.SetFloat("Speed", 0.5f);
+        }
+        else
+        {
+            //Run
+            animator.SetFloat("Speed", 1);
+        }
     }
 }
