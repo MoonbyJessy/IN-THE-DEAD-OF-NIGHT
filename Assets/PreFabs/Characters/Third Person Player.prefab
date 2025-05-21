@@ -297,6 +297,9 @@ MonoBehaviour:
   controller: {fileID: 4806220127056152393}
   walkSpeed: 45
   sprintSpeed: 90
+  gravityForce: -1.5
+  isSprinting: 0
+  isWalking: 0
   turnSmoothTime: 0.1
   cam: {fileID: 0}
   sprintKey: 304
